@@ -18,7 +18,12 @@ class CourseController extends Controller
     {
         $this->course = $course;
     }
-
+    
+    /**
+     * Method index
+     *
+     * @return void
+     */
     public function index()
     {
         return $this->course->paginate(10);
@@ -28,7 +33,14 @@ class CourseController extends Controller
     {
         return $this->course->findOrFail($id);
     }
-
+    
+    /**
+     * Method store
+     *
+     * @param Request $request [explicite description]
+     *
+     * @return void
+     */
     public function store(Request $request)
     {
         $this->course->create($request->all());
@@ -40,7 +52,15 @@ class CourseController extends Controller
                         ]
                     ]);
     }
-
+    
+    /**
+     * Method update
+     *
+     * @param $id $id [explicite description]
+     * @param Request $request [explicite description]
+     *
+     * @return void
+     */
     public function update($id, Request $request)
     {
         $course = $this->course->findOrFail($id);
@@ -54,7 +74,14 @@ class CourseController extends Controller
                         ]
                     ]);
     }
-
+    
+    /**
+     * Method destroy
+     *
+     * @param $id $id [explicite description]
+     *
+     * @return void
+     */
     public function destroy($id)
     {
         $course = $this->course->findOrFail($id);
