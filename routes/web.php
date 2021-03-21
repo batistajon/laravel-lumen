@@ -15,7 +15,7 @@
 
 $router->get('/', function () use ($router) {
     
-    return 'Primeira API REST com Lumen! by Jon Batista na versão do ' . $router->app->version() . ', fazendo deply pelo git. #3';
+    return 'Primeira API REST com Lumen! by Jon Batista na versão do ' . $router->app->version() . ', fazendo deply pelo git. #4';
 });
 
 $router->group(['prefix' => 'courses'], function () use ($router) {
