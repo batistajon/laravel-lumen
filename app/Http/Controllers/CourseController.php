@@ -26,7 +26,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return $this->course->paginate(10);
+        return response()->json([$this->course])->paginate(10);
     }
     
     /**
