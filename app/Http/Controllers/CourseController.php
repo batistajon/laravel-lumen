@@ -28,7 +28,14 @@ class CourseController extends Controller
     {
         return $this->course->paginate(10);
     }
-
+    
+    /**
+     * Method show
+     *
+     * @param $id $id [explicite description]
+     *
+     * @return void
+     */
     public function show($id)
     {
         return $this->course->findOrFail($id);
