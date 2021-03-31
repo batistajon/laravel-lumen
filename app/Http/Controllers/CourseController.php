@@ -39,7 +39,6 @@ class CourseController extends Controller
     public function show($id)
     {
         return response()->json([$this->course->findOrFail($id)]);
-        //return $this->course->findOrFail($id);
     }
     
     /**
