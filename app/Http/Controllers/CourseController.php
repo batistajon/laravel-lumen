@@ -26,7 +26,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return $this->course->paginate(10);
+        return response()->json($this->course->get());
     }
     
     /**
@@ -38,7 +38,8 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        return $this->course->findOrFail($id);
+        return response()->json([$this->course->findOrFail($id)]);
+        //return $this->course->findOrFail($id);
     }
     
     /**
@@ -71,6 +72,7 @@ class CourseController extends Controller
     public function update($id, Request $request)
     {
         $course = $this->course->findOrFail($id);
+ 
 
         $course->update($request->all());
 

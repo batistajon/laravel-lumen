@@ -18,15 +18,12 @@ $router->get('/', function () use ($router) {
     return 'Criação de API REST simples com Lumen! by Jon Batista na versão do ' . $router->app->version() . ', deploy pelo git no terminal. #5';
 });
 
-$router->group(['prefix' => 'courses'], function () use ($router) {
+$router->get('/courses', 'CourseController@index');
 
-    $router->get('/', 'CourseController@index');
+$router->group(['prefix' => 'course'], function () use ($router) {
 
     $router->get('/{id}', 'CourseController@show');
-
     $router->post('/', 'CourseController@store');
-
     $router->put('/{id}', 'CourseController@update');
-
     $router->delete('/{id}', 'CourseController@destroy');
 });
